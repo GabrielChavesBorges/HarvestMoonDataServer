@@ -1,9 +1,9 @@
-import { Season } from 'src/enums/Season.enum';
+import { Season } from 'src/common/enums/Season.enum';
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { PersonInterface } from './interface';
+import { PersonInterface } from './person.interface';
 
 @Entity('person')
-export class Person implements PersonInterface {
+export class PersonEntity implements PersonInterface {
   @PrimaryGeneratedColumn({ type: 'integer', name: 'id' })
   id: number;
 

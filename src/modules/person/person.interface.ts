@@ -1,4 +1,4 @@
-import { Season } from 'src/enums/Season.enum';
+import { Season } from 'src/common/enums/Season.enum';
 
 export interface PersonInterface {
   id: number;
