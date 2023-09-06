@@ -3,12 +3,13 @@ import { Person } from './person.model';
 import { GetOneByIdArgs } from '../../common/args/get-one-by-id.args';
 import { Repository } from 'typeorm';
 import { CreatePersonArgs } from './args/create.args';
+import { PersonEntity } from './person.entity';
 
 @Injectable()
 export class PersonService {
   constructor(
-    @Inject('PersonRepository')
-    private repository: Repository<Person>,
+    @Inject('PERSON_REPOSITORY')
+    private repository: Repository<PersonEntity>,
   ) {}
 
   async getOnePersonById(args: GetOneByIdArgs): Promise<Person | null> {

@@ -1,15 +1,15 @@
-import { ArgsType, Field } from '@nestjs/graphql';
+import { ArgsType, Field, Int } from '@nestjs/graphql';
 import { PersonInterface } from '../person.interface';
 import { Season } from 'src/common/enums/Season.enum';
 
 @ArgsType()
 export class CreatePersonArgs implements Partial<PersonInterface> {
-  @Field()
+  @Field(() => String)
   name?: string | undefined;
 
-  @Field({ nullable: true })
+  @Field(() => Season, { nullable: true })
   birthSeason?: Season | undefined;
 
-  @Field({ nullable: true })
+  @Field(() => Int, { nullable: true })
   birthDay?: number | undefined;
 }
