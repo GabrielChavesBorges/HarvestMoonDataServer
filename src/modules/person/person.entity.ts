@@ -10,12 +10,12 @@ export class PersonEntity implements PersonInterface {
   @Column({ type: 'varchar', name: 'name', length: '20' })
   name: string;
 
-  @Column({ type: 'enum', enum: Season, name: 'birth_season' })
+  @Column({ type: 'enum', enum: Season, name: 'birth_season', nullable: true })
   birthSeason: Season;
 
-  @Column({ type: 'tinyint', name: 'birth_day' })
+  @Column({ type: 'tinyint', name: 'birth_day', nullable: true })
   birthDay: number;
 
-  @Column({ type: 'varchar', name: 'image', length: '2083' })
+  @Column({ type: 'varchar', name: 'image', length: '2083', nullable: true })
   image: string;
 }

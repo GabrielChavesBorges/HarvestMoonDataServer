@@ -9,6 +9,8 @@ export class GqlConfigService implements ApolloDriverConfigFactory {
       autoSchemaFile: '~/schema.gql',
       sortSchema: true,
       playground: true,
+      csrfPrevention: false,
+      introspection: true,
       formatError: (error: GraphQLError) => {
         const logMessage = `----------- GraphQL Error ----------
 PATH - ${error.path}

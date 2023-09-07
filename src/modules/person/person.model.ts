@@ -1,4 +1,4 @@
-import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 import { Season } from 'src/common/enums/Season.enum';
 import { PersonInterface } from './person.interface';
 
@@ -10,12 +10,12 @@ export class Person implements PersonInterface {
   @Field()
   name: string;
 
-  @Field()
+  @Field(() => Season, { nullable: true })
   birthSeason: Season;
 
-  @Field()
+  @Field(() => Int, { nullable: true })
   birthDay: number;
 
-  @Field()
+  @Field({ nullable: true })
   image: string;
 }
