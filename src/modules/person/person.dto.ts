@@ -3,7 +3,7 @@ import { Season } from 'src/common/enums/Season.enum';
 import { PersonInterface } from './person.interface';
 
 @ObjectType()
-export class Person implements PersonInterface {
+export class PersonDTO implements PersonInterface {
   @Field()
   id: number;
 

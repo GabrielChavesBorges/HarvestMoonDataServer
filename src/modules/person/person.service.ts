@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Person } from './person.model';
+import { PersonDTO } from './person.dto';
 import { GetOneByIdArgs } from '../../common/args/get-one-by-id.args';
 import { Repository } from 'typeorm';
 import { CreatePersonArgs } from './args/create.args';
@@ -12,7 +12,7 @@ export class PersonService {
     private repository: Repository<PersonEntity>,
   ) {}
 
-  async getOnePersonById(args: GetOneByIdArgs): Promise<Person | null> {
+  async getOnePersonById(args: GetOneByIdArgs): Promise<PersonDTO | null> {
     const { id } = args;
     return await this.repository.findOneBy({ id });
   }
