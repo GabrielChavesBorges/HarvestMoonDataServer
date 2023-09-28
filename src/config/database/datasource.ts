@@ -23,5 +23,3 @@ export const dataSourceOptions: DataSourceOptions = {
 
 const dataSource = new DataSource(dataSourceOptions);
 export default dataSource;
-
-// PGPASSWORD=29LShnEkS2kXWjpLFyoMBadXWnsChiis psql -h dpg-ck80smfsasqs73ck817g-a.singapore-postgres.render.com -U gabe harvest_moon_db
